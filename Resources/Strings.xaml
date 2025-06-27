@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary xmlns:sys="clr-namespace:System;assembly=mscorlib">
+            <sys:String x:Key="Back">Назад</sys:String>
+            <sys:String x:Key="Donate">Пожертвовать</sys:String>
+            <sys:String x:Key="About">Об организации</sys:String>
+
+            <sys:String x:Key="MainView_Title1">В течение 10 лет</sys:String>
+            <sys:String x:Key="MainView_Title2">мы помогаем людям замечать проблемы тех, кто рядом, и уметь протянуть руку помощи в нужный момент</sys:String>
+            <sys:String x:Key="MainView_ParTitle1">Кто мы?</sys:String>
+            <sys:String x:Key="MainView_Paragraph1">Мы неравнодушные люди Забайкалья, объединенные в одну добрую команду, помогающую помогать</sys:String>
+            <sys:String x:Key="MainView_ParTitle2">Что делаем?</sys:String>
+            <sys:String x:Key="MainView_Paragraph2">Помогаем тем, кто нуждается в нашей помощи (семьям и пожилым в трудной жизненной ситуации, сиротам, выпускникам детских домов, отказникам, приемным семьям)</sys:String>
+            <sys:String x:Key="MainView_BtnProjects">Наши проекты</sys:String>
+            <sys:String x:Key="MainView_BtnAbout">Об организации</sys:String>
+            <sys:String x:Key="MainView_BtnDonate">Пожертвовать</sys:String>
+
+            <sys:String x:Key="About1View_Text1">«Союз добровольцев России» — добровольное, самоуправляемое, основанное на членстве общественное объединение, созданное на основе совместной деятельности для защиты общих интересов и достижения уставных целей объединившихся граждан.</sys:String>
+            <sys:String x:Key="About1View_Text2">Союз добровольцев России — это объединение неравнодушных людей и общественных организаций из 83 регионов России. Наша задача — объединение добровольцев страны в общих проектах.</sys:String>
+            <sys:String x:Key="About1View_Title">Мы ведем работу по направлениям:</sys:String>
+            <sys:String x:Key="About1View_list1">• Детство.Материнство.Семья;</sys:String>
+            <sys:String x:Key="About1View_list2">• Патриотическое и духовно-нравственное развитие молодежи;</sys:String>
+            <sys:String x:Key="About1View_list3">• Равные возможности (работа с инвалидами и пожилыми людьми);</sys:String>
+            <sys:String x:Key="About1View_list4">• Экология;</sys:String>
+            <sys:String x:Key="About1View_list5">• Добровольцы ЧС.</sys:String>
+
+            <sys:String x:Key="About2View_Title1">Наша миссия</sys:String>
+            <sys:String x:Key="About2View_Text1">Помогать людям замечать проблемы тех, кто рядом, и уметь протянуть руку помощи в нужный момент.</sys:String>
+            <sys:String x:Key="About2View_Title2">Мы верим</sys:String>
+            <sys:String x:Key="About2View_Text2">Что люди созданы любить и быть любимыми; Людям нужна поддержка и помощь; Ваша жизнь и ваша история важны; Лучшие дни и яркая жизнь здесь рядом; Надежда и помощь реальны.</sys:String>
+            <sys:String x:Key="About2View_Title3">Наша деятельность</sys:String>
+            <sys:String x:Key="About2View_Text3_1">Мы упорно работаем с каждым, кто обратился к нам за помощью, с членами их семей, друзьями и теми, кто готов поддержать человека в трудной жизненной ситуации.</sys:String>
+            <sys:String x:Key="About2View_Text3_2">Мы помогаем детям-отказникам в больницах и детских домах, ищем им приемных родителей, наставников для подростков, поддерживаем кровные семьи, одиноких и многодетных мам, чтобы дети не попадали в детдома.</sys:String>
+            <sys:String x:Key="About2View_Text3_3">Работаем с детьми-сиротами: помогаем найти им родителей или восстановиться в правах их кровным родным; готовим им наставников и дарим друга на всю жизнь; учимся вместе финансовой грамотности.</sys:String>
+
+            <sys:String x:Key="About3View_Title1">Юридическая информация</sys:String>
+            <sys:String x:Key="About3View_Title2">Документы</sys:String>
+            <sys:String x:Key="About3View_subTitle1">Название:</sys:String>
+            <sys:String x:Key="About3View_subTitle2">Юридический/Фактический адрес:</sys:String>
+            <sys:String x:Key="About3View_subTitle3">ИНН</sys:String>
+            <sys:String x:Key="About3View_subTitle4">КПП</sys:String>
+            <sys:String x:Key="About3View_subTitle5">ОГРН</sys:String>
+            <sys:String x:Key="About3View_subTitle6">Код отрасли по ОКПО:</sys:String>
+            <sys:String x:Key="About3View_subTitle7">ОКАТО:</sys:String>
+            <sys:String x:Key="About3View_subTitle8">Расчетный счет:</sys:String>
+            <sys:String x:Key="About3View_subTitle9">БИК:</sys:String>
+            <sys:String x:Key="About3View_subTitle10">Корреспондентский счет:</sys:String>
+            <sys:String x:Key="About3View_subTitle11">Полное наименование банка:</sys:String>
+            <sys:String x:Key="About3View_subTitle12">Начальник регионального штаба:</sys:String>
+            <sys:String x:Key="About3View_subTitle13">Телефон:</sys:String>
+            <sys:String x:Key="About3View_subTitle14">E-mail:</sys:String>
+
+            <sys:String x:Key="About3View_subText1">Забайкальское краевое отделение Всероссийской общественной организации «Союз добровольцев России» (ЗКО ВОО «Союз добровольцев России»)</sys:String>
+            <sys:String x:Key="About3View_subText2">Забайкальский край, г. Чита,  ул. Лермонтова д.1 оф.320</sys:String>
+            <sys:String x:Key="About3View_subText3">7536148523</sys:String>
+            <sys:String x:Key="About3View_subText4">753601001</sys:String>
+            <sys:String x:Key="About3View_subText5">1147500010866</sys:String>
+            <sys:String x:Key="About3View_subText6">12649317 ОКТМО: 76701000001</sys:String>
+            <sys:String x:Key="About3View_subText7">76401364000</sys:String>
+            <sys:String x:Key="About3View_subText8">40703810774000000476</sys:String>
+            <sys:String x:Key="About3View_subText9">047601637</sys:String>
+            <sys:String x:Key="About3View_subText10">30101810500000000637</sys:String>
+            <sys:String x:Key="About3View_subText11">отделение 8600/069 Сбербанка России, г.Чита</sys:String>
+            <sys:String x:Key="About3View_subText12">Рахманова Кристина Викторовна</sys:String>
+            <sys:String x:Key="About3View_subText13">89144903179</sys:String>
+            <sys:String x:Key="About3View_subText14">CDR-Chita@mail.ru</sys:String>
+            <sys:String x:Key="About3View_Btn1">Устав</sys:String>
+            <sys:String x:Key="About3View_Btn2">Регистрация НКО</sys:String>
+            <sys:String x:Key="About3View_Btn3">О постановке на учет в ФНС</sys:String>
+            <sys:String x:Key="About3View_Btn4">Регистрация ЮЛ</sys:String>
+
+
+
+
+            <sys:String x:Key="PageView_Title">Наши проекты</sys:String>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="Inter">pack://application,,,/Resources/Fonts/#Inter</FontFamily>
+    <FontFamily x:Key="Rubik">pack://application,,,/Resources/Fonts/#Rubik</FontFamily>
+    <FontFamily x:Key="TitleFont">\Resources\Fonts\DIN Pro Bold Bold.ttf#DIN Pro Bold</FontFamily>
+    <FontFamily x:Key="TextFont">\Resources\Fonts\DIN Pro Regular Regular.ttf#DIN Pro Regular</FontFamily>
+    <FontFamily x:Key="BtnFont">\Resources\Fonts\DIN Pro Medium Medium.ttf#DIN Pro Medium</FontFamily>
+    <FontFamily x:Key="CardFont">\Resources\Fonts\DIN Pro Light Light.otf#DIN Pro Light</FontFamily>
+
+
+    <Style
+        x:Key="InterText"
+        BasedOn="{StaticResource BaseTextStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Inter}" />
+    </Style>
+
+    <Style
+        x:Key="RubikText"
+        BasedOn="{StaticResource BaseTextStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Rubik}" />
+    </Style>
+
+    <Style x:Key="TitleText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource TitleFont}" />
+        <Setter Property="FontSize" Value="54" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="LineHeight" Value="59.4" />
+    </Style>
+    <Style
+        x:Key="TitleTextType2"
+        BasedOn="{StaticResource TitleText}"
+        TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="40" />
+        <Setter Property="LineHeight" Value="44" />
+    </Style>
+
+    <Style x:Key="BaseTextStyle" TargetType="TextBlock">
+        
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontSize" Value="28" />
+    </Style>
+
+    <Style x:Key="DocTextStyle" TargetType="TextBlock">
+
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontSize" Value="28" />
+    </Style>
+
+    <Style
+        x:Key="CenterTextStyle"
+        BasedOn="{StaticResource BaseTextStyle}"
+        TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center" />
+    </Style>
+
+    <Style
+        x:Key="CardTextStyle"
+        TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource CardFont}"></Setter>
+        <Setter Property="FontSize" Value="18"> </Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+</ResourceDictionary>
