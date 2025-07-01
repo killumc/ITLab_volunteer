@@ -6,12 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:test2.ViewModels.Pages"
+    xmlns:panels="clr-namespace:MainComponents.Panels;assembly=MainComponents"
+    xmlns:converters="clr-namespace:test2.Converters"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     x:Name="ProjectPage"
     d:DataContext="{d:DesignInstance pages:DonatePageViewModel}"
     d:DesignHeight="1080"
     d:DesignWidth="1920"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <converters:IntEqualsConverter x:Key="IntEqualsConverter"/>
+    </UserControl.Resources>
+
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
     <Grid>
 
 
@@ -29,7 +42,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="{StaticResource Back}"
-            Style="{StaticResource BackBtnStyle}" />
+            Style="{StaticResource BackBtnStyle}"
+            Command="{Binding backPageNavigationCommand}"/>
 
         <Image
             Grid.Row="0"
@@ -41,7 +55,148 @@
             VerticalAlignment="Top"
             Source="/Resources/Images/logo.png" />
 
-        <Border Margin="81,212" />
+        <Border
+            Margin="81,212,81,37"
+            Background="White"
+            BorderBrush="{StaticResource DonateBorderBrush}"
+            BorderThickness="3"
+            CornerRadius="24">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="50,80,0,80">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource TitleText}"
+                        Text="{StaticResource DonateView_Title1}" />
+                    <ComboBox 
+                        Name="project"
+                        Margin="0,42,0,54" 
+                        Style="{StaticResource ComboBox}" 
+                        ItemsSource="{Binding Cards}"
+                        DisplayMemberPath="Title"
+                        SelectedItem="{Binding SelectedCard, Mode=TwoWay}"
+                        />
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource TitleText}"
+                        Text="{StaticResource DonateView_Title2}" />
+                    <WrapPanel Margin="0,42,0,42">
+                        <RadioButton Content="100 ₽" GroupName="Sum"
+                                     IsChecked="{Binding SelectedSum, Converter={StaticResource IntEqualsConverter}, ConverterParameter=100, Mode=TwoWay}" />
+                        <RadioButton Content="500 ₽" GroupName="Sum"
+                                     IsChecked="{Binding SelectedSum, Converter={StaticResource IntEqualsConverter}, ConverterParameter=500, Mode=TwoWay}" />
+                        <RadioButton Content="1000 ₽" GroupName="Sum"
+                                     IsChecked="{Binding SelectedSum, Converter={StaticResource IntEqualsConverter}, ConverterParameter=1000, Mode=TwoWay}" />
+                        <RadioButton Content="5000 ₽" GroupName="Sum"
+                                     IsChecked="{Binding SelectedSum, Converter={StaticResource IntEqualsConverter}, ConverterParameter=5000, Mode=TwoWay}" />
+                    </WrapPanel>
+                    <TextBox Margin="0,0,0,24" Text="{Binding OwnSumDonate, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="25"
+                        Style="{StaticResource BaseTextStyle}"
+                        Text="{StaticResource DonateView_minSum}" />
+                </StackPanel>
+
+                <Grid
+                    Grid.Column="1"
+                    Width="803"
+                    Height="671">
+                    <Border
+                        Width="340"
+                        Height="440"
+                        VerticalAlignment="Top"
+                        Background="#DBDBDD"
+                        CornerRadius="20">
+                        <StackPanel Margin="22.11">
+                            <ItemsControl>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <panels:StretchyWrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.Items>
+                                    <Button
+                                        Command="{Binding Add1Command}"
+                                        Content="1"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add2Command}"
+                                        Content="2"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add3Command}"
+                                        Content="3"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add4Command}"
+                                        Content="4"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add5Command}"
+                                        Content="5"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add6Command}"
+                                        Content="6"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add7Command}"
+                                        Content="7"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add8Command}"
+                                        Content="8"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add9Command}"
+                                        Content="9"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button
+                                        Command="{Binding Add0Command}"
+                                        Content="0"
+                                        Style="{StaticResource SymbolButton}" />
+                                    <Button Command="{Binding DeleteCommand}" Style="{StaticResource RemoveSymbolButton}">
+                                        <Grid>
+                                            <Path
+                                                Margin="-5,0,0,0"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Data="M42.9061 1.70654H9.20986C8.35342 1.70654 7.78246 2.09785 7.30666 2.78263L1.12126 12.3696C0.930936 12.6631 0.930936 12.9565 1.12126 13.1522L7.30666 22.7392C7.78246 23.3261 8.35342 23.8152 9.20986 23.8152H42.8109C44.1431 23.8152 45.1899 22.7392 45.1899 21.3696V4.1522C45.2851 2.78263 44.2383 1.70654 42.9061 1.70654Z"
+                                                Stroke="{StaticResource BlackBrush}"
+                                                StrokeLineJoin="Round"
+                                                StrokeThickness="1.86086" />
+                                            <Path
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Data="M11.2522 10.4397L10.6101 11.0818C10.3349 11.357 9.87618 11.357 9.60096 11.0818L5.93147 7.41233L2.26198 11.0818C1.98677 11.357 1.52808 11.357 1.25287 11.0818L0.610706 10.4397C0.335494 10.1645 0.335494 9.70577 0.610706 9.43055L4.2802 5.76106L0.610706 2.09157C0.335494 1.81636 0.335494 1.35767 0.610706 1.08246L1.25287 0.440296C1.52808 0.165084 1.98677 0.165084 2.26198 0.440296L5.93147 4.10979L9.60096 0.440296C9.87618 0.165084 10.3349 0.165084 10.6101 0.440296L11.2522 1.08246C11.5274 1.35767 11.5274 1.81636 11.2522 2.09157L7.58274 5.76106L11.2522 9.43055C11.5274 9.70577 11.5274 10.1645 11.2522 10.4397Z"
+                                                Fill="{StaticResource BlackBrush}" />
+                                        </Grid>
+                                    </Button>
+                                </ItemsControl.Items>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                    <Button
+                        Width="388.5"
+                        Height="120"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Content="Отмена"
+                        Style="{StaticResource BackBtnStyle}" />
+                    <Button
+                        Width="388.5"
+                        Height="120"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Content="{StaticResource Donate}"
+                        Style="{StaticResource RedButtonStyle}" />
+                </Grid>
+            </Grid>
+        </Border>
 
     </Grid>
 </UserControl>

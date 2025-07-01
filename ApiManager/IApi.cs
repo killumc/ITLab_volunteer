@@ -11,7 +11,7 @@ namespace test2.ApiManager
 {
     public interface IApi
     {
-        [Get("/projects")]
-        Task<ObservableCollection<ProjectApiModel>> GetCardsAsync();
+        [Get("/projects")] 
+        Task<List<ProjectApiModel>> GetCardsAsync();
     }
 }

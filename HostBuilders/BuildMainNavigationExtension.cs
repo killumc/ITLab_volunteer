@@ -20,20 +20,14 @@ namespace test2.HostBuilders
             {
                 services.AddSingleton<NavigationStore>();
                 services.AddUtilityNavigationServices<NavigationStore>();
-                services.AddNavigationService<MainPageViewModel, NavigationStore>(s=>
-                new MainPageViewModel(s.GetRequiredService<NavigationService<ProjectPageViewModel>>(),
-                    s.GetRequiredService<NavigationService<AboutPageViewModel>>()));
+                services.AddNavigationService<MainPageViewModel, NavigationStore>();
 
                 services.AddNavigationService<ProjectPageViewModel, NavigationStore>(s=>
                 new ProjectPageViewModel(s.GetRequiredService<NavigationService<MainPageViewModel>>(),
-                    s.GetRequiredService<IApi>(),
                     s.GetRequiredService<NavigationService<SelectedProjectPageViewModel>>(),
-                    s.GetRequiredService<SelectedCardService>()));
+                    s.GetRequiredService<ProjectService>()));
 
-                services.AddNavigationService<SelectedProjectPageViewModel, NavigationStore>(s =>
-                    new SelectedProjectPageViewModel(s.GetRequiredService<NavigationService<ProjectPageViewModel>>(),
-                        s.GetRequiredService<SelectedCardService>(),
-                        s.GetRequiredService<IApi>()));
+                services.AddNavigationService<SelectedProjectPageViewModel, NavigationStore>();
 
                 services.AddNavigationService<AboutPageViewModel, NavigationStore>(s =>
                     new AboutPageViewModel(s.GetRequiredService<NavigationService<MainPageViewModel>>(),
@@ -43,6 +37,9 @@ namespace test2.HostBuilders
                         s.GetRequiredService<About4PageViewModel>(),
                         s.GetRequiredService<About5PageViewModel>()));
 
+                services.AddNavigationService<DonatePageViewModel, NavigationStore>();
+                //services.AddNavigationService<DonatePageViewModel, NavigationStore>(s =>
+                //    new DonatePageViewModel(s.GetRequiredService<GoBackNavigationService<>>()));
             });
 
             return builder;

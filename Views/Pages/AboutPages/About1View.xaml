@@ -16,40 +16,26 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Image 
-            Margin="0 0 54 0"
-            Source="/Resources/Images/aboutView/page1.png" />
-        <StackPanel Grid.Column="1" >
-            <TextBlock 
+        <Image Margin="0,0,54,0" Source="/Resources/Images/aboutView/page1.png" />
+        <StackPanel Grid.Column="1">
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_Text1}" />
+            <TextBlock
+                Margin="0,21,0,21"
                 Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_Text1}"/>
-            <TextBlock 
-                Margin="0 21 0 21"
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_Text2}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Foreground="{StaticResource RedBrush}"
+                Text="{StaticResource About1View_Text2}" />
+            <TextBlock
+                Margin="0,0,0,21"
                 FontFamily="{StaticResource TitleFont}"
-                Margin="0 0 0 21"
-                Text="{StaticResource About1View_Title}"/>
+                Foreground="{StaticResource RedBrush}"
+                Style="{StaticResource BaseTextStyle}"
+                Text="{StaticResource About1View_Title}" />
 
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_list1}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_list2}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_list3}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_list4}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About1View_list5}"/>
-            
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_list1}" />
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_list2}" />
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_list3}" />
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_list4}" />
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About1View_list5}" />
+
         </StackPanel>
     </Grid>
 </UserControl>

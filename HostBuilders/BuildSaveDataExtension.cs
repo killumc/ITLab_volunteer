@@ -17,7 +17,7 @@ namespace test2.HostBuilders
         {
             builder.ConfigureServices((context, services) =>
             {
-                services.AddSingleton<SelectedCardService>();
+                services.AddSingleton<ProjectService>();
                 services.AddSingleton<About1PageViewModel>();
                 services.AddSingleton<About2PageViewModel>();
                 services.AddSingleton<About3PageViewModel>();

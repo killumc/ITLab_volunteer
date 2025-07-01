@@ -49,20 +49,16 @@
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <TextBlock
+                Margin="0,0,0,36"
                 FontSize="40"
-                Margin="0 0 0 36"
                 Style="{StaticResource TitleText}"
                 Text="{StaticResource About2View_Title3}" />
-            <TextBlock 
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About2View_Text3_1}" />
+            <TextBlock
+                Margin="0,21,0,21"
                 Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About2View_Text3_1}"/>
-            <TextBlock 
-                Margin="0 21 0 21"
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About2View_Text3_2}"/>
-            <TextBlock 
-                Style="{StaticResource BaseTextStyle}"
-                Text="{StaticResource About2View_Text3_3}"/>
+                Text="{StaticResource About2View_Text3_2}" />
+            <TextBlock Style="{StaticResource BaseTextStyle}" Text="{StaticResource About2View_Text3_3}" />
 
         </StackPanel>
     </Grid>

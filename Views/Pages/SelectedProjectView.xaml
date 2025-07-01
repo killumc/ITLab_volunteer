@@ -26,7 +26,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        
+
         <TextBlock
             Grid.Row="0"
             Style="{StaticResource TitleText}"
@@ -43,9 +43,9 @@
             Margin="0,20.1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Command="{Binding ProjectViewNavigateCommand}"
             Content="{StaticResource Back}"
-            Style="{StaticResource BackBtnStyle}" 
-            Command="{Binding ProjectViewNavigateCommand}"/>
+            Style="{StaticResource BackBtnStyle}" />
         <Image
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
@@ -66,11 +66,8 @@
             <ScrollViewer
                 Grid.RowSpan="2"
                 Grid.Column="1"
-                Margin="54,64,50,64"
-                >
-                <TextBlock
-                    Style="{StaticResource BaseTextStyle}"
-                    Text="{Binding SelectedCard.Description}"></TextBlock>
+                Margin="54,64,50,64">
+                <TextBlock Style="{StaticResource BaseTextStyle}" Text="{Binding SelectedCard.Description}" />
             </ScrollViewer>
 
 
@@ -80,7 +77,7 @@
                 Margin="50,64,0,54"
                 CornerRadius="16">
                 <Border.Background>
-                    <ImageBrush ImageSource="{Binding SelectedCard.ImageSource}"/>
+                    <ImageBrush ImageSource="{Binding SelectedCard.ImageSource}" />
                 </Border.Background>
             </Border>
 
@@ -89,8 +86,8 @@
                 Height="120"
                 Margin="50,0,0,64"
                 Content="{StaticResource Donate}"
-                Style="{StaticResource RedButtonStyle}"
-                />
+                Style="{StaticResource RedButtonStyle}" 
+                Command="{Binding DonateViewNavigateCommand}"/>
 
         </Grid>
 

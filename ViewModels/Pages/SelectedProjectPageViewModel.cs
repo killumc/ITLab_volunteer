@@ -15,32 +15,28 @@ using test2.Utilities;
 
 namespace test2.ViewModels.Pages
 {
-    public partial class SelectedProjectPageViewModel(NavigationService<ProjectPageViewModel> ProjectViewNavigationService, 
-        SelectedCardService saveCard,
-        IApi Api): ObservableObject
+    public partial class SelectedProjectPageViewModel(NavigationService<ProjectPageViewModel> projectViewNavigationService, 
+        NavigationService<DonatePageViewModel> donateViewNavigationService,
+        ProjectService projectS): ObservableObject
     { 
-        private int idSelectedCard;
-
-        [ObservableProperty] private ProjectApiModel selectedCard = new ProjectApiModel();
-        [RelayCommand] private void ProjectViewNavigate() => ProjectViewNavigationService.Navigate();
+        private int _idSelectedCard;
+        [ObservableProperty] private CardModel? _selectedCard;
+        [RelayCommand] private void ProjectViewNavigate() => projectViewNavigationService.Navigate();
 
         [RelayCommand]
-        async void Loaded()
+        private void DonateViewNavigate() => donateViewNavigationService.Navigate();
+        [RelayCommand] 
+         private void Loaded()
         {
-            idSelectedCard = saveCard.SelectedCard.Id;
-            Debug.WriteLine(idSelectedCard);
-
-            var cardsList = await Api.GetCardsAsync();
+            _idSelectedCard = projectS.SelectedCard.Id;
+            projectS.DonateCard= _selectedCard;
 
             try
             {
-                var card = cardsList.FirstOrDefault(c => c.Id == idSelectedCard);
+                var card = projectS.AllProject.FirstOrDefault(c => c.Id == _idSelectedCard);
                 if (card != null)
                 {
-                    card.Description = ReplaceTags(card.Description);
                     SelectedCard = card;
-
-                    Debug.WriteLine(selectedCard.Title);
                 }
                 else
                 {
@@ -54,17 +50,6 @@ namespace test2.ViewModels.Pages
         }
 
 
-        public static string ReplaceTags(string html)
-        {
-            if (string.IsNullOrEmpty(html))
-                return html;
-
-            string result = Regex.Replace(html, @"<br>", "\n", RegexOptions.IgnoreCase);
-            result = Regex.Replace(result, @"<\/?div>", "", RegexOptions.IgnoreCase);
-            //result = Regex.Replace(html, @"&nbsp", "\u00A0", RegexOptions.IgnoreCase);
-
-            return result;
-        }
 
     }
 }

@@ -15,7 +15,8 @@
     <Color x:Key="RedCardBorderColor">#64110E</Color>
 
     <Color x:Key="RoundedBtnColor">#12529E</Color>
-
+    <Color x:Key="DonateBorderColor">#33877C</Color>
+    <Color x:Key="GreyTestColor">#707070</Color>
 
 
     <SolidColorBrush x:Key="TextBrush" Color="{StaticResource BlackColor}" />
@@ -30,4 +31,6 @@
     <SolidColorBrush x:Key="RedCardBrush" Color="{StaticResource RedCardColor}" />
     <SolidColorBrush x:Key="RedCardBorderBrush" Color="{StaticResource RedCardBorderColor}" />
     <SolidColorBrush x:Key="RoundedBtnBrush" Color="{StaticResource RoundedBtnColor}" />
+    <SolidColorBrush x:Key="DonateBorderBrush" Color="{StaticResource DonateBorderColor}" />
+    <SolidColorBrush x:Key="GreyBrush" Color="{StaticResource GreyTestColor}" />
 </ResourceDictionary>

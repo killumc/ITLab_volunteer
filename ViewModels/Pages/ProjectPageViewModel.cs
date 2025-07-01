@@ -20,9 +20,8 @@ using System.Diagnostics;
 namespace test2.ViewModels.Pages
 {
     public partial class ProjectPageViewModel(NavigationService<MainPageViewModel> MainViewNavigationService , 
-        IApi Api, 
         NavigationService<SelectedProjectPageViewModel> SelectedProjectNavigationService,
-        SelectedCardService selectedCardS) : ObservableObject
+        ProjectService projectS) : ObservableObject
     {
         [ObservableProperty]
         private ObservableCollection<CardModel> cards = [];
@@ -30,48 +29,22 @@ namespace test2.ViewModels.Pages
         [RelayCommand] private void MainViewNavigation() => MainViewNavigationService.Navigate();
         [RelayCommand]private void SelectedProjectNavigation(CardModel selectedCard)
         {
-            selectedCardS.SelectedCard=selectedCard;
+            projectS.SelectedCard=selectedCard;
             SelectedProjectNavigationService.Navigate();
         }
 
-        [RelayCommand] private void Loaded()
+        [RelayCommand]
+        private async Task Loaded()
         {
+            await projectS.DataLoaded;
             SetCard();
         }
 
-        async void SetCard()
+        private void SetCard()
         {
-            //var cardsList = await Api.GetCardsAsync();
-
-            //try
-            //{
-            //    foreach (var card in cardsList)
-            //    {
-
-            //        if(card.Id%2 == 0 ) card.ItsRed=true;
-            //        else card.ItsRed = false;
-
-            //        cards.Add(card);
-            //    }
-            //}
-            //catch (ApiException ex)
-            //{
-            //    Debug.WriteLine($"API Error: {ex.StatusCode} - {ex.Message}");
-            //}
-
-            var json = File.ReadAllText("CardsInfo.json");
-            List<CardModel> cardsList = JsonSerializer.Deserialize<List<CardModel>>(json);
-
-            foreach (var card in cardsList)
-            {
-
-                if (card.Id % 2 == 0) card.ItsRed = true;
-                else card.ItsRed = false;
-
-                cards.Add(card);
-            }
-
-
+            Cards.Clear();
+            foreach (var card in projectS.AllProject)
+                Cards.Add(card);
         }
     }
 }

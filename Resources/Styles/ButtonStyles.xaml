@@ -128,5 +128,99 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="BorderBrush" Value="{StaticResource RedBrush}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Margin" Value="0 0 64 0"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid Width="49" Height="49">
+                                <Ellipse x:Name="Border"
+                                     Stroke="{StaticResource BlackBrush}"
+                                     StrokeThickness="1" />
+                                <Ellipse x:Name="CheckMark"
+                                     Margin="13"
+                                     Visibility="Collapsed">
+                                    <Ellipse.Fill>
+                                        <SolidColorBrush Color="{StaticResource RedTestColor}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter
+                        Margin="12,0,0,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource RedBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource BlackBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="SymbolButton" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Height="88.4347915649414"
+                        Width="88.4347915649414"
+                        Margin="3.685"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="24">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="32"
+                            Foreground="{TemplateBinding Foreground}"
+                            Text="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RemoveSymbolButton" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="#2A2C2B" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Width="191.6087188720703"
+                        Height="88.4347915649414"
+                        Margin="3.685"
+                        Background="White"
+                        CornerRadius="24">
+                        <ContentPresenter Width="90" ContentTemplate="{DynamicResource ClosePopupRemoveSymbolIcon}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 
 </ResourceDictionary>

@@ -27,7 +27,13 @@
             <sys:String x:Key="About2View_Title1">Наша миссия</sys:String>
             <sys:String x:Key="About2View_Text1">Помогать людям замечать проблемы тех, кто рядом, и уметь протянуть руку помощи в нужный момент.</sys:String>
             <sys:String x:Key="About2View_Title2">Мы верим</sys:String>
-            <sys:String x:Key="About2View_Text2">Что люди созданы любить и быть любимыми; Людям нужна поддержка и помощь; Ваша жизнь и ваша история важны; Лучшие дни и яркая жизнь здесь рядом; Надежда и помощь реальны.</sys:String>
+            <sys:String x:Key="About2View_Text2">
+                Что люди созданы любить и быть любимыми;
+                Людям нужна поддержка и помощь;
+                Ваша жизнь и ваша история важны;
+                Лучшие дни и яркая жизнь здесь рядом;
+                Надежда и помощь реальны.
+            </sys:String>
             <sys:String x:Key="About2View_Title3">Наша деятельность</sys:String>
             <sys:String x:Key="About2View_Text3_1">Мы упорно работаем с каждым, кто обратился к нам за помощью, с членами их семей, друзьями и теми, кто готов поддержать человека в трудной жизненной ситуации.</sys:String>
             <sys:String x:Key="About2View_Text3_2">Мы помогаем детям-отказникам в больницах и детских домах, ищем им приемных родителей, наставников для подростков, поддерживаем кровные семьи, одиноких и многодетных мам, чтобы дети не попадали в детдома.</sys:String>
@@ -51,7 +57,10 @@
             <sys:String x:Key="About3View_subTitle14">E-mail:</sys:String>
 
             <sys:String x:Key="About3View_subText1">Забайкальское краевое отделение Всероссийской общественной организации «Союз добровольцев России» (ЗКО ВОО «Союз добровольцев России»)</sys:String>
-            <sys:String x:Key="About3View_subText2">Забайкальский край, г. Чита,  ул. Лермонтова д.1 оф.320</sys:String>
+            <sys:String x:Key="About3View_subText2">
+                Забайкальский край, г. Чита,
+                ул. Лермонтова д.1 оф.320
+            </sys:String>
             <sys:String x:Key="About3View_subText3">7536148523</sys:String>
             <sys:String x:Key="About3View_subText4">753601001</sys:String>
             <sys:String x:Key="About3View_subText5">1147500010866</sys:String>
@@ -69,10 +78,18 @@
             <sys:String x:Key="About3View_Btn3">О постановке на учет в ФНС</sys:String>
             <sys:String x:Key="About3View_Btn4">Регистрация ЮЛ</sys:String>
 
-
+            <sys:String x:Key="DonateView_Title1">Выберите проект</sys:String>
+            <sys:String x:Key="DonateView_Title2">Укажите сумму пожертвования</sys:String>
+            <sys:String x:Key="DonateView_minSum">Минимальная сумма пожертвования 10 ₽</sys:String>
 
 
             <sys:String x:Key="PageView_Title">Наши проекты</sys:String>
+
+            <sys:String x:Key="PopupPayment_card">Картой</sys:String>
+            <sys:String x:Key="PopupPayment_QR">По QR коду</sys:String>
+            <sys:String x:Key="PopupPayment_back">Отмена</sys:String>
+            <sys:String x:Key="PopupPayment_title">Выберите способ пожертвования</sys:String>
+            
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -34,6 +34,7 @@
     <None Remove="Resources\Images\icons\chevron-right.png" />
     <None Remove="Resources\Images\icons\icon.png" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\popupPayment.png" />
     <None Remove="Resources\Images\projectBg1.png" />
     <None Remove="Resources\Images\projectBg2.png" />
     <None Remove="Resources\Images\VectorBlue.png" />
@@ -101,6 +102,7 @@
     <Resource Include="Resources\Images\icons\chevron-right.png" />
     <Resource Include="Resources\Images\icons\icon.png" />
     <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\popupPayment.png" />
     <Resource Include="Resources\Images\projectBg1.png" />
     <Resource Include="Resources\Images\projectBg2.png" />
     <Resource Include="Resources\Images\VectorBlue.png" />
