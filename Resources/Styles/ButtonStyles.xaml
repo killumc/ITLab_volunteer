@@ -129,26 +129,28 @@
     </Style>
 
     <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderBrush" Value="{StaticResource RedBrush}" />
         <Setter Property="Background" Value="#00FFFFFF" />
-        <Setter Property="FontSize" Value="30"></Setter>
-        <Setter Property="Margin" Value="0 0 64 0"></Setter>
-        <Setter Property="FontFamily" Value="{StaticResource TextFont}"></Setter>
-        <Setter Property="Foreground" Value="{StaticResource BlackBrush}"></Setter>
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="Margin" Value="0,0,64,0" />
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                     <BulletDecorator Background="Transparent">
                         <BulletDecorator.Bullet>
                             <Grid Width="49" Height="49">
-                                <Ellipse x:Name="Border"
-                                     Stroke="{StaticResource BlackBrush}"
-                                     StrokeThickness="1" />
-                                <Ellipse x:Name="CheckMark"
-                                     Margin="13"
-                                     Visibility="Collapsed">
+                                <Ellipse
+                                    x:Name="Border"
+                                    Stroke="{StaticResource BlackBrush}"
+                                    StrokeThickness="1" />
+                                <Ellipse
+                                    x:Name="CheckMark"
+                                    Margin="13"
+                                    Visibility="Collapsed">
                                     <Ellipse.Fill>
                                         <SolidColorBrush Color="{StaticResource RedTestColor}" />
                                     </Ellipse.Fill>
@@ -156,19 +158,19 @@
                             </Grid>
                         </BulletDecorator.Bullet>
                         <ContentPresenter
-                        Margin="12,0,0,0"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Left"
-                        RecognizesAccessKey="True"/>
+                            Margin="12,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            RecognizesAccessKey="True" />
                     </BulletDecorator>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
-                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource RedBrush}"/>
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource RedBrush}" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource BlackBrush}"/>
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Border" Property="Stroke" Value="{StaticResource BlackBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -185,8 +187,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        Height="88.4347915649414"
                         Width="88.4347915649414"
+                        Height="88.4347915649414"
                         Margin="3.685"
                         Background="{TemplateBinding Background}"
                         CornerRadius="24">

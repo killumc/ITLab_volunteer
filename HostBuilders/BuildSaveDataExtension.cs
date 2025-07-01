@@ -8,6 +8,7 @@ using test2.Utilities;
 using test2.ViewModels;
 using test2.ViewModels.Pages;
 using test2.ViewModels.Pages.AboutPages;
+using test2.ViewModels.Popups;
 
 namespace test2.HostBuilders
 {
@@ -17,12 +18,18 @@ namespace test2.HostBuilders
         {
             builder.ConfigureServices((context, services) =>
             {
-                services.AddSingleton<ProjectService>();
+                services.AddSingleton<SaveDataService>();
                 services.AddSingleton<About1PageViewModel>();
                 services.AddSingleton<About2PageViewModel>();
                 services.AddSingleton<About3PageViewModel>();
                 services.AddSingleton<About4PageViewModel>();
                 services.AddSingleton<About5PageViewModel>();
+
+                services.AddSingleton<LoadingPopupViewModel>();
+                services.AddSingleton<ErrorPopupViewModel>();
+                services.AddSingleton<MainPaymentPopupViewModel>();
+                services.AddSingleton<QRPaymentPopupViewModel>();
+                services.AddSingleton<CardPaymentPopupViewModel>();
 
             });
 

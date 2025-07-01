@@ -1,0 +1,70 @@
+﻿<UserControl
+    x:Class="test2.Views.Popups.CardPaymentPopupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:test2.ViewModels.Popups"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:popupContainers="clr-namespace:MainComponents.Popups.PopupContainers;assembly=MainComponents"
+    d:DesignHeight="506"
+    d:DesignWidth="1715"
+    mc:Ignorable="d">
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
+    <Grid Width="1715" Height="506">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Width="631"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Image
+                Width="175"
+                Height="175"
+                Source="/Resources/Images/popupCardPayment.png" />
+            <TextBlock
+                Margin="0,48,0,24"
+                Style="{StaticResource TitleText}"
+                Text="{StaticResource PopupCardPayment_title}" />
+            <TextBlock
+                FontSize="30"
+                Style="{StaticResource CenterTextStyle}"
+                Text="{StaticResource PopupCardPayment_text}" />
+
+
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Width="762"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Border
+                Margin="0,0,0,94"
+                Padding="28"
+                Background="#F3F4F8"
+                CornerRadius="16">
+                <TextBlock HorizontalAlignment="Center" Style="{StaticResource TitleText}">
+                    <Run
+                        FontFamily="{StaticResource TextFont}"
+                        FontSize="54"
+                        Text="{StaticResource PopupCardPayment_pay}" />
+                    <Run FontSize="54" Text="{Binding DonationAmount}" />
+
+                </TextBlock>
+            </Border>
+            <Button
+                Height="120"
+                Command="{Binding MainOpenCommand}"
+                Content="{StaticResource PopupPayment_back}"
+                FontFamily="{StaticResource BtnFont}"
+                FontSize="40"
+                Style="{StaticResource TransparentBtnStyle}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

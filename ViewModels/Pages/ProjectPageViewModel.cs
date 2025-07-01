@@ -21,7 +21,7 @@ namespace test2.ViewModels.Pages
 {
     public partial class ProjectPageViewModel(NavigationService<MainPageViewModel> MainViewNavigationService , 
         NavigationService<SelectedProjectPageViewModel> SelectedProjectNavigationService,
-        ProjectService projectS) : ObservableObject
+        SaveDataService saveDataS) : ObservableObject
     {
         [ObservableProperty]
         private ObservableCollection<CardModel> cards = [];
@@ -29,21 +29,21 @@ namespace test2.ViewModels.Pages
         [RelayCommand] private void MainViewNavigation() => MainViewNavigationService.Navigate();
         [RelayCommand]private void SelectedProjectNavigation(CardModel selectedCard)
         {
-            projectS.SelectedCard=selectedCard;
+            saveDataS.SelectedCard=selectedCard;
             SelectedProjectNavigationService.Navigate();
         }
 
         [RelayCommand]
         private async Task Loaded()
         {
-            await projectS.DataLoaded;
+            await saveDataS.DataLoaded;
             SetCard();
         }
 
         private void SetCard()
         {
             Cards.Clear();
-            foreach (var card in projectS.AllProject)
+            foreach (var card in saveDataS.AllProject)
                 Cards.Add(card);
         }
     }

@@ -10,7 +10,7 @@ using test2.Utilities;
 
 namespace test2.ViewModels.Pages
 {
-    public partial class MainPageViewModel(IApi api, ProjectService projectService, 
+    public partial class MainPageViewModel(IApi api, SaveDataService saveDataService, 
         NavigationService<ProjectPageViewModel> projectViewNavigationService, 
         NavigationService<AboutPageViewModel> aboutViewNavigationService,
         NavigationService<DonatePageViewModel> donateViewNavigationService) : ObservableObject
@@ -24,7 +24,7 @@ namespace test2.ViewModels.Pages
         [RelayCommand]
         private async Task Loaded()
         {
-            projectService.DonateCard = null;
+            saveDataService.DonateCard = null;
             try
             {
                 var cardsList = await api.GetCardsAsync();
@@ -37,7 +37,7 @@ namespace test2.ViewModels.Pages
                     ItsRed = card.Id % 2 == 0
                 }).ToList();
 
-                projectService.SetProjects(projects);
+                saveDataService.SetProjects(projects);
             }
             catch (ApiException ex)
             {

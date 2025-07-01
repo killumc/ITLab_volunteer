@@ -8,12 +8,14 @@ using CommunityToolkit.Mvvm.Input;
 using MvvmNavigationLib.Services;
 using test2.Utilities;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using MvvmNavigationLib.Stores;
 using test2.Models;
+using test2.ViewModels.Popups;
 
 namespace test2.ViewModels.Pages
 {
-    public partial class DonatePageViewModel(ProjectService projectS, GoBackNavigationService<NavigationStore> backNavigation) : ObservableObject
+    public partial class DonatePageViewModel(SaveDataService saveDataS, GoBackNavigationService<NavigationStore> backNavigation, NavigationService<PaymentPopupViewModel> paymentNavigationService) : ObservableObject
     {
         private const int MaxDonate = 999_000_000;
         private const int MinDonate = 10;
@@ -29,6 +31,16 @@ namespace test2.ViewModels.Pages
 
         [RelayCommand]
         private void backPageNavigation() => backNavigation.Navigate();
+
+        [RelayCommand]
+        private void OpenPaymentPopup()
+        {
+            saveDataS.Donate = new DonationModel();
+            if (SelectedCard == null || ActualSum == null) return;
+            saveDataS.Donate.Project = SelectedCard;
+            saveDataS.Donate.DonationAmount = ActualSum;
+            paymentNavigationService.Navigate();
+        }
         [RelayCommand] private void Add1() => TryAddDigit('1');
         [RelayCommand] private void Add2() => TryAddDigit('2');
         [RelayCommand] private void Add3() => TryAddDigit('3');
@@ -47,9 +59,9 @@ namespace test2.ViewModels.Pages
         [RelayCommand]
         private async Task Loaded()
         {
-            await projectS.DataLoaded;
+            await saveDataS.DataLoaded;
             Cards.Add(new CardModel(){Title = "Без проекта", Id = 0});
-            Cards.AddRange(projectS.AllProject);
+            Cards.AddRange(saveDataS.AllProject);
             SelectedCard = Cards[0];
         }
         public int? ActualSum

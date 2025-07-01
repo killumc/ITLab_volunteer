@@ -17,7 +17,7 @@ namespace test2.ViewModels.Pages
 {
     public partial class SelectedProjectPageViewModel(NavigationService<ProjectPageViewModel> projectViewNavigationService, 
         NavigationService<DonatePageViewModel> donateViewNavigationService,
-        ProjectService projectS): ObservableObject
+        SaveDataService saveDataS): ObservableObject
     { 
         private int _idSelectedCard;
         [ObservableProperty] private CardModel? _selectedCard;
@@ -28,12 +28,12 @@ namespace test2.ViewModels.Pages
         [RelayCommand] 
          private void Loaded()
         {
-            _idSelectedCard = projectS.SelectedCard.Id;
-            projectS.DonateCard= _selectedCard;
+            _idSelectedCard = saveDataS.SelectedCard.Id;
+            saveDataS.DonateCard= _selectedCard;
 
             try
             {
-                var card = projectS.AllProject.FirstOrDefault(c => c.Id == _idSelectedCard);
+                var card = saveDataS.AllProject.FirstOrDefault(c => c.Id == _idSelectedCard);
                 if (card != null)
                 {
                     SelectedCard = card;

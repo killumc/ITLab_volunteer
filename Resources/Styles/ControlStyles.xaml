@@ -65,15 +65,14 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="20"
-                        >
+                        CornerRadius="20">
                         <Grid>
                             <TextBlock
-                                Padding="32"
                                 Margin="0"
+                                Padding="32"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                Text="{Binding SelectedItem.Title, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                Text="{Binding SelectedItem.Title, RelativeSource={RelativeSource TemplatedParent}}" />
                             <ToggleButton
                                 x:Name="PART_Button"
                                 Height="64"
@@ -142,13 +141,11 @@
         </Setter>
     </Style>
 
-<Style
-    TargetType="Border"
-    x:Key="PopupStyle">
-        <Setter Property="Background" Value="#FAFAFA"></Setter>
-    <Setter Property="CornerRadius" Value="30"></Setter>
+    <Style x:Key="PopupStyle" TargetType="Border">
+        <Setter Property="Background" Value="#FAFAFA" />
+        <Setter Property="CornerRadius" Value="30" />
 
-</Style>
+    </Style>
 
 
 

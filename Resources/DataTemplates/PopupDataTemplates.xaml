@@ -6,4 +6,26 @@
     <DataTemplate DataType="{x:Type popups:PasswordPopupViewModel}">
         <popups1:PasswordPopupView DataContext="{Binding}" />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:PaymentPopupViewModel}">
+        <popups1:PaymentPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:MainPaymentPopupViewModel}">
+        <popups1:MainPaymentPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:CardPaymentPopupViewModel}">
+        <popups1:CardPaymentPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:QRPaymentPopupViewModel}">
+        <popups1:QRPaymentPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:LoadingPopupViewModel}">
+        <popups1:LoadingPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:ErrorPopupViewModel}">
+        <popups1:ErrorPopupView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type popups:SuccessPopupViewModel}">
+        <popups1:SuccessPopupView DataContext="{Binding}" />
+    </DataTemplate>
+
 </ResourceDictionary>

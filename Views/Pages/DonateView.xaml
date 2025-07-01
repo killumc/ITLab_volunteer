@@ -73,7 +73,6 @@
                         Style="{StaticResource TitleText}"
                         Text="{StaticResource DonateView_Title1}" />
                     <ComboBox 
-                        Name="project"
                         Margin="0,42,0,54" 
                         Style="{StaticResource ComboBox}" 
                         ItemsSource="{Binding Cards}"
@@ -193,7 +192,8 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Content="{StaticResource Donate}"
-                        Style="{StaticResource RedButtonStyle}" />
+                        Style="{StaticResource RedButtonStyle}" 
+                        Command="{Binding OpenPaymentPopupCommand}"/>
                 </Grid>
             </Grid>
         </Border>

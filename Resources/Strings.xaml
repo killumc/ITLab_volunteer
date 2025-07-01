@@ -4,6 +4,9 @@
             <sys:String x:Key="Back">Назад</sys:String>
             <sys:String x:Key="Donate">Пожертвовать</sys:String>
             <sys:String x:Key="About">Об организации</sys:String>
+            <sys:String x:Key="Close">Закрыть</sys:String>
+            <sys:String x:Key="Cancel">Отмена</sys:String>
+            <sys:String x:Key="GoMain">На главную</sys:String>
 
             <sys:String x:Key="MainView_Title1">В течение 10 лет</sys:String>
             <sys:String x:Key="MainView_Title2">мы помогаем людям замечать проблемы тех, кто рядом, и уметь протянуть руку помощи в нужный момент</sys:String>
@@ -89,7 +92,24 @@
             <sys:String x:Key="PopupPayment_QR">По QR коду</sys:String>
             <sys:String x:Key="PopupPayment_back">Отмена</sys:String>
             <sys:String x:Key="PopupPayment_title">Выберите способ пожертвования</sys:String>
-            
+
+            <sys:String x:Key="PopupCardPayment_title">Поднесите карту</sys:String>
+            <sys:String x:Key="PopupCardPayment_text">Пожалуйста, приложите карту к терминалу для завершения пожертвования</sys:String>
+            <sys:String x:Key="PopupCardPayment_pay">К оплате:</sys:String>
+
+            <sys:String x:Key="PopupQRPayment_title">Отсканируйте QR-код на терминале</sys:String>
+            <sys:String x:Key="PopupQRPayment_text">Пожалуйста, отсканируйте QR код для завершения пожертвования</sys:String>
+            <sys:String x:Key="PopupQRPayment_pay">К оплате:</sys:String>
+
+            <sys:String x:Key="PopupLoading_title">Обработка пожертвования</sys:String>
+            <sys:String x:Key="PopupLoading_text">Пожалуйста, подождите</sys:String>
+
+            <sys:String x:Key="PopupError_title">Пожертвование не отправлено</sys:String>
+            <sys:String x:Key="PopupError_text">Пожалуйста, вернитесь назад и попробуйте снова</sys:String>
+
+            <sys:String x:Key="PopupSuccess_title">Пожертвование успешно отправлено</sys:String>
+            <sys:String x:Key="PopupSuccess_text">Спасибо за ваше участие!</sys:String>
+
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

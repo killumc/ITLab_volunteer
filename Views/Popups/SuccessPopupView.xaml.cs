@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace test2.ViewModels.Popups
+namespace test2.Views.Popups
 {
     /// <summary>
-    /// Логика взаимодействия для PaymentPopup.xaml
+    /// Логика взаимодействия для SuccessPopupView.xaml
     /// </summary>
-    public partial class PaymentPopup : UserControl
+    public partial class SuccessPopupView : UserControl
     {
-        public PaymentPopup()
+        public SuccessPopupView()
         {
             InitializeComponent();
         }

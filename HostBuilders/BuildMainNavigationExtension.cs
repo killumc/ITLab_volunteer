@@ -25,7 +25,7 @@ namespace test2.HostBuilders
                 services.AddNavigationService<ProjectPageViewModel, NavigationStore>(s=>
                 new ProjectPageViewModel(s.GetRequiredService<NavigationService<MainPageViewModel>>(),
                     s.GetRequiredService<NavigationService<SelectedProjectPageViewModel>>(),
-                    s.GetRequiredService<ProjectService>()));
+                    s.GetRequiredService<SaveDataService>()));
 
                 services.AddNavigationService<SelectedProjectPageViewModel, NavigationStore>();
 
@@ -38,8 +38,7 @@ namespace test2.HostBuilders
                         s.GetRequiredService<About5PageViewModel>()));
 
                 services.AddNavigationService<DonatePageViewModel, NavigationStore>();
-                //services.AddNavigationService<DonatePageViewModel, NavigationStore>(s =>
-                //    new DonatePageViewModel(s.GetRequiredService<GoBackNavigationService<>>()));
+
             });
 
             return builder;

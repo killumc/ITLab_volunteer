@@ -39,7 +39,7 @@
     </Style>
 
     <Style x:Key="BaseTextStyle" TargetType="TextBlock">
-        
+
         <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
         <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
         <Setter Property="TextWrapping" Value="Wrap" />
@@ -61,11 +61,9 @@
         <Setter Property="TextAlignment" Value="Center" />
     </Style>
 
-    <Style
-        x:Key="CardTextStyle"
-        TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="{StaticResource CardFont}"></Setter>
-        <Setter Property="FontSize" Value="18"> </Setter>
-        <Setter Property="Foreground" Value="White"></Setter>
+    <Style x:Key="CardTextStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource CardFont}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
 </ResourceDictionary>

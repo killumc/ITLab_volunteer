@@ -3,14 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 using test2.Models;
 
 namespace test2.Utilities
 {
-    public class ProjectService
+    public class SaveDataService
     {
+        public enum PopupType
+        {
+            main,
+            card,
+            QR,
+            load,
+            error,
+            success,
+            exit
+        }
         public CardModel? SelectedCard { get; set; }
         public CardModel? DonateCard { get; set; }
+        public DonationModel? Donate { get; set; }
+
+        public event Action? PopupChanged;
+
+        private PopupType _nextPopup;
+        public PopupType NextPopup
+        {
+            get => _nextPopup;
+            set
+            {
+                if (_nextPopup != value)
+                {
+                    _nextPopup = value;
+                    PopupChanged?.Invoke();
+                }
+            }
+        }
+
+
 
         private readonly TaskCompletionSource _dataLoaded = new();
         public List<CardModel> AllProject { get; set; } = new();
