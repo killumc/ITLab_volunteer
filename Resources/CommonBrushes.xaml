@@ -18,6 +18,10 @@
     <Color x:Key="DonateBorderColor">#33877C</Color>
     <Color x:Key="GreyTestColor">#707070</Color>
 
+    <Color x:Key="DarkerRedColor">#CC261E</Color>
+    <Color x:Key="TransparentRedColor">#10F45952</Color>
+    <Color x:Key="DarkerGreenColor">#24B03E</Color>
+
 
     <SolidColorBrush x:Key="TextBrush" Color="{StaticResource BlackColor}" />
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource YellowColor}" />
@@ -33,4 +37,7 @@
     <SolidColorBrush x:Key="RoundedBtnBrush" Color="{StaticResource RoundedBtnColor}" />
     <SolidColorBrush x:Key="DonateBorderBrush" Color="{StaticResource DonateBorderColor}" />
     <SolidColorBrush x:Key="GreyBrush" Color="{StaticResource GreyTestColor}" />
+    <SolidColorBrush x:Key="DarkerRedBrush" Color="{StaticResource DarkerRedColor}" />
+    <SolidColorBrush x:Key="DarkerGreenBrush" Color="{StaticResource DarkerGreenColor}" />
+    <SolidColorBrush x:Key="TransparentRedBrush" Color="{StaticResource TransparentRedColor}" />
 </ResourceDictionary>

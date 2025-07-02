@@ -29,9 +29,9 @@
                 Height="120"
                 Margin="0,64,0,0"
                 Background="#51D169"
+                Command="{Binding closePopupCommand}"
                 Content="{StaticResource Close}"
-                Style="{StaticResource RedButtonStyle}"
-                Command="{Binding closePopupCommand}"/>
+                Style="{StaticResource RedButtonStyle}" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -44,7 +44,6 @@
         </StackPanel>
         <StackPanel
             Grid.Column="1"
-            Width="762"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
             <Button
@@ -59,6 +58,7 @@
                 Content="{StaticResource PopupPayment_QR}"
                 Style="{StaticResource RedButtonStyle}" />
             <Button
+                Width="762"
                 Height="120"
                 Command="{Binding ClosePopupCommand}"
                 Content="{StaticResource PopupPayment_back}"

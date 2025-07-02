@@ -42,7 +42,7 @@
     <ControlTemplate x:Key="TranspButtonTemplate" TargetType="Button">
         <Border
             x:Name="Border"
-            Background="#00FFFFFF"
+            Background="{TemplateBinding Background}"
             BorderBrush="{StaticResource RedBrush}"
             BorderThickness="2"
             CornerRadius="16"
@@ -50,6 +50,7 @@
             UseLayoutRounding="True">
             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
+
     </ControlTemplate>
 
     <ControlTemplate x:Key="CardTemplate" TargetType="Button">
@@ -80,8 +81,22 @@
         BasedOn="{StaticResource BaseButtonContent}"
         TargetType="Button">
         <Setter Property="Background" Value="{StaticResource RedBrush}" />
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
         <Setter Property="Template" Value="{StaticResource BaseButtonTemplate}" />
-
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource DarkerRedBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource DarkerRedBrush}" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="0.98" ScaleY="0.98" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style
@@ -89,14 +104,42 @@
         BasedOn="{StaticResource BaseButtonContent}"
         TargetType="Button">
         <Setter Property="Background" Value="{StaticResource BlueBrush}" />
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
         <Setter Property="Template" Value="{StaticResource BaseButtonTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#0d69d9" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#0d69d9" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="0.98" ScaleY="0.98" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="TransparentBtnStyle" TargetType="Button">
         <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
         <Setter Property="Foreground" Value="{StaticResource RedBrush}" />
-
+       <Setter Property="Background" Value="#00FFFFFF"></Setter>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
         <Setter Property="Template" Value="{StaticResource TranspButtonTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource TransparentRedBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource TransparentRedBrush}" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="0.98" ScaleY="0.98" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style
         x:Key="BackBtnStyle"
@@ -222,6 +265,9 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
 
 
 
