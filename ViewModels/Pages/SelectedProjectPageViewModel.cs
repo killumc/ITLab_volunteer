@@ -24,7 +24,7 @@ namespace test2.ViewModels.Pages
         [RelayCommand] private void ProjectViewNavigate()
         {
             projectViewNavigationService.Navigate();
-
+            saveDataS.SelectedCard = null;
         }
 
         [RelayCommand]

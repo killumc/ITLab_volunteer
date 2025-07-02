@@ -70,7 +70,8 @@ namespace test2.ViewModels.Pages
             await saveDataS.DataLoaded;
             Cards.Add(new CardModel(){Title = "Без проекта", Id = 0});
             Cards.AddRange(saveDataS.AllProject);
-            SelectedCard = Cards[0];
+            if(saveDataS.SelectedCard==null) SelectedCard = Cards[0];
+            else SelectedCard= Cards[saveDataS.SelectedCard.Id];
         }
         public int? ActualSum
         {
