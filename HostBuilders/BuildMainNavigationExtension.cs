@@ -8,7 +8,7 @@ using test2.Models;
 using test2.Utilities;
 using test2.ViewModels;
 using test2.ViewModels.Pages;
-using test2.ViewModels.Pages.AboutPages;
+
 
 namespace test2.HostBuilders
 {
@@ -30,12 +30,7 @@ namespace test2.HostBuilders
                 services.AddNavigationService<SelectedProjectPageViewModel, NavigationStore>();
 
                 services.AddNavigationService<AboutPageViewModel, NavigationStore>(s =>
-                    new AboutPageViewModel(s.GetRequiredService<NavigationService<MainPageViewModel>>(),
-                        s.GetRequiredService<About1PageViewModel>(),
-                        s.GetRequiredService<About2PageViewModel>(),
-                        s.GetRequiredService<About3PageViewModel>(),
-                        s.GetRequiredService<About4PageViewModel>(),
-                        s.GetRequiredService<About5PageViewModel>()));
+                    new AboutPageViewModel(s.GetRequiredService<NavigationService<MainPageViewModel>>()));
 
                 services.AddNavigationService<DonatePageViewModel, NavigationStore>();
 

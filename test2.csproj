@@ -11,6 +11,9 @@
   <ItemGroup>
     <None Remove="CardsInfo.json" />
     <None Remove="Resources\Fonts\DIN Pro Light Light.otf" />
+    <None Remove="Resources\Images\aboutView\Frame 1.png" />
+    <None Remove="Resources\Images\aboutView\Frame 2.png" />
+    <None Remove="Resources\Images\aboutView\Frame 3.png" />
     <None Remove="Resources\Images\aboutView\Page4.png" />
     <None Remove="Resources\Images\aboutView\Page5.png" />
     <None Remove="Resources\Images\bg about\Group 48.png" />
@@ -53,7 +56,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Images\aboutView\page1.png" />
+    <Resource Include="Resources\Images\aboutView\Frame 1.png" />
+    <Resource Include="Resources\Images\aboutView\Frame 2.png" />
+    <Resource Include="Resources\Images\aboutView\Frame 3.png" />
     <Resource Include="Resources\Images\aboutView\Page4.png" />
     <Resource Include="Resources\Images\aboutView\Page5.png" />
     <Resource Include="Resources\Images\bg about\Group 48.png" />
@@ -130,18 +135,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Pages\AboutPages\About5View.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\AboutPages\About4View.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\AboutPages\About3View.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\AboutPages\About2View.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\Popups\CardPaymentPopupView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
