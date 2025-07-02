@@ -40,6 +40,7 @@ namespace test2.ViewModels.Pages
             saveDataS.Donate.Project = SelectedCard;
             saveDataS.Donate.DonationAmount = ActualSum;
             paymentNavigationService.Navigate();
+            saveDataS.NextPopup = SaveDataService.PopupType.main;
         }
 
         [RelayCommand]
