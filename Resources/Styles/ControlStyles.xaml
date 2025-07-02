@@ -147,10 +147,9 @@
                                 Text="{Binding SelectedItem.Title, RelativeSource={RelativeSource TemplatedParent}}" />
                             <ToggleButton
                                 x:Name="PART_Button"
-                                Height="64"
+  
                                 Margin="0,0,32,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Center"
+            
                                 Background="Transparent"
                                 BorderThickness="0"
                                 Focusable="False"
@@ -173,11 +172,23 @@
                                         </Setter>
                                     </Style>
                                 </ToggleButton.Style>
-                                <Path
+                                <Grid>
+                                    <Border
+                                        Height="107"
+                                        Width="803"
+                                        Background="#00FFFFFF"
+                                        CornerRadius="20">
+                                        
+                                        
+                                    </Border>
+                                    <Path
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
                                     x:Name="ArrowPath"
                                     Data="M15 10.5L0.27757 0L29.7224 0L15 10.5Z"
                                     Fill="{StaticResource GreyBrush}"
                                     StrokeThickness="3" />
+                                </Grid>
                             </ToggleButton>
 
                             <Popup
