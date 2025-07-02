@@ -41,6 +41,14 @@ namespace test2.ViewModels.Pages
             saveDataS.Donate.DonationAmount = ActualSum;
             paymentNavigationService.Navigate();
         }
+
+        [RelayCommand]
+        private void CancelButton()
+        {
+            SelectedSum = null;
+            OwnSumDonate = "";
+            SelectedCard = Cards[0];
+        }
         [RelayCommand] private void Add1() => TryAddDigit('1');
         [RelayCommand] private void Add2() => TryAddDigit('2');
         [RelayCommand] private void Add3() => TryAddDigit('3');

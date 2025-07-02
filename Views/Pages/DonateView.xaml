@@ -185,7 +185,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
                         Content="Отмена"
-                        Style="{StaticResource BackBtnStyle}" />
+                        Style="{StaticResource BackBtnStyle}" 
+                        Command="{Binding CancelButtonCommand}"/>
                     <Button
                         Width="388.5"
                         Height="120"
