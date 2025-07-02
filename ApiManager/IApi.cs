@@ -13,7 +13,7 @@ namespace test2.ApiManager
 {
     public interface IApi
     {
-        [Get("/projects")]
+        [Get("/api/projects")]
         Task<List<ProjectApiModel>> GetCardsAsync();
 
         [Get("/{**imageId}")]

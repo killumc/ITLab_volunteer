@@ -20,7 +20,7 @@ namespace test2.HostBuilders
                     {
                         PropertyNameCaseInsensitive = true
                     })
-                }).ConfigureHttpClient(c => c.BaseAddress = new Uri("http://api-sdr.itlabs.top/api"));
+                }).ConfigureHttpClient(c => c.BaseAddress = new Uri("http://api-sdr.itlabs.top"));
             });
             return builder;
         }

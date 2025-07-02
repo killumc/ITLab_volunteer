@@ -21,7 +21,11 @@ namespace test2.ViewModels.Pages
     { 
         private int _idSelectedCard;
         [ObservableProperty] private CardModel? _selectedCard;
-        [RelayCommand] private void ProjectViewNavigate() => projectViewNavigationService.Navigate();
+        [RelayCommand] private void ProjectViewNavigate()
+        {
+            projectViewNavigationService.Navigate();
+
+        }
 
         [RelayCommand]
         private void DonateViewNavigate() => donateViewNavigationService.Navigate();

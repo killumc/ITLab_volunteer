@@ -41,7 +41,6 @@ namespace test2.ViewModels.Pages
                 }).ToList();
 
                 var projects = await Task.WhenAll(projectTasks);
-
                 saveDataService.SetProjects(projects.ToList());
 
             }

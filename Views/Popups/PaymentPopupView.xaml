@@ -10,16 +10,18 @@
     d:DesignHeight="684"
     d:DesignWidth="1755"
     mc:Ignorable="d">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+   
         <popupContainers:ScaleContainer>
             <b:Interaction.Triggers>
                 <b:EventTrigger EventName="Loaded">
                     <b:InvokeCommandAction Command="{Binding LoadedCommand}" />
                 </b:EventTrigger>
             </b:Interaction.Triggers>
-            <Border Style="{StaticResource PopupStyle}">
+            <Border Style="{StaticResource PopupStyle}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
                 <ContentControl Content="{Binding CurrentPopupViewModel}" />
             </Border>
         </popupContainers:ScaleContainer>
-    </StackPanel>
+   
 </UserControl>
