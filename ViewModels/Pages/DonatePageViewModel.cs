@@ -88,6 +88,7 @@ namespace test2.ViewModels.Pages
         {
             if (value != null)
                 OwnSumDonate = "";
+            SelectedSum= value;
         }
         private void TryAddDigit(char digit)
         {
