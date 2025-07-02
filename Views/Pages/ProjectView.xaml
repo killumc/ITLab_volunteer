@@ -67,6 +67,7 @@
             Source="/Resources/Images/logo.png" />
 
         <ScrollViewer
+            Style="{StaticResource ScrollViewerStyle}"
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Width="1430"

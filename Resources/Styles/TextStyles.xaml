@@ -27,7 +27,6 @@
         <Setter Property="FontSize" Value="54" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="LineHeight" Value="59.4" />
     </Style>
     <Style
         x:Key="TitleTextType2"
