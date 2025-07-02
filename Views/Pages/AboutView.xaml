@@ -93,10 +93,15 @@
                 <components:RoundedButton
                     Margin="0,0,24,0"
                     Command="{Binding PreviousPageCommand}"
+                    IsEnabled="{Binding CanGoToPreviousPage}"
                     Style="{StaticResource RoundedBtnStyle}">
                     <Path Data="M1.03947 14.8336C0.070177 13.8037 0.0701771 12.1972 1.03947 11.1674L10.8754 0.716671C11.3816 0.178835 12.228 0.153188 12.7658 0.659387C13.3036 1.16559 13.3293 2.01194 12.8231 2.54978L2.98715 13.0005L12.8231 23.4512C13.3293 23.989 13.3036 24.8354 12.7658 25.3415C12.228 25.8477 11.3816 25.8221 10.8754 25.2843L1.03947 14.8336Z" Fill="White" />
                 </components:RoundedButton>
-                <components:RoundedButton Command="{Binding NextPageCommand}" Style="{StaticResource RoundedBtnStyle}">
+                <components:RoundedButton 
+                    Command="{Binding NextPageCommand}" 
+                    Style="{StaticResource RoundedBtnStyle}"
+                    IsEnabled="{Binding CanGoToNextPage}"
+                    >
                     <Path Data="M12.9606 14.8336C13.9299 13.8037 13.9299 12.1972 12.9606 11.1674L3.12464 0.716671C2.61844 0.178835 1.77209 0.153188 1.23425 0.659387C0.696414 1.16559 0.670766 2.01194 1.17696 2.54978L11.0129 13.0005L1.17697 23.4512C0.670767 23.989 0.696415 24.8354 1.23425 25.3415C1.77209 25.8477 2.61844 25.8221 3.12464 25.2843L12.9606 14.8336Z" Fill="White" />
                 </components:RoundedButton>
             </StackPanel>

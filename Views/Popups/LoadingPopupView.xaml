@@ -13,7 +13,23 @@
             <Image
                 Width="175"
                 Height="175"
-                Source="/Resources/Images/PopupLoading.png" />
+                Source="/Resources/Images/PopupLoading.png">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="rotate" CenterX="87.5" CenterY="87.5" />
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever">
+                                <DoubleAnimation Storyboard.TargetName="rotate"
+                                                 Storyboard.TargetProperty="Angle"
+                                                 By="360"
+                                                 Duration="0:0:3"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
             <TextBlock
                 Margin="0,64,0,24"
                 Style="{StaticResource TitleText}"

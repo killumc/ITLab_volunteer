@@ -16,8 +16,10 @@ namespace test2.ViewModels.Pages
          private int indexCurrentPage=0;
 
         public List<string> ListPagesViewModel { get; set; }
+        [ObservableProperty] private bool _canGoToNextPage;
+        [ObservableProperty] private bool _canGoToPreviousPage;
 
-        
+
 
         [RelayCommand]
         private void MainViewNavigation() => MainViewNavigationService.Navigate();
@@ -28,6 +30,8 @@ namespace test2.ViewModels.Pages
             ListPagesViewModel = ["/Resources/Images/aboutView/Frame 1.png", "/Resources/Images/aboutView/Frame 2.png", "/Resources/Images/aboutView/Frame 3.png", "/Resources/Images/aboutView/Page4.png", "/Resources/Images/aboutView/Page5.png",];
             indexCurrentPage = 0;
             CurrentPageViewModel = ListPagesViewModel[indexCurrentPage];
+            CanGoToNextPage = indexCurrentPage < ListPagesViewModel.Count() - 1;
+            CanGoToPreviousPage = indexCurrentPage > 0;
 
         }
 
@@ -38,6 +42,9 @@ namespace test2.ViewModels.Pages
             {
                 indexCurrentPage++;
                 CurrentPageViewModel = ListPagesViewModel[indexCurrentPage];
+                CanGoToNextPage = indexCurrentPage < ListPagesViewModel.Count() - 1;
+                CanGoToPreviousPage = indexCurrentPage > 0;
+
 
             }
         }
@@ -49,6 +56,9 @@ namespace test2.ViewModels.Pages
             {
                 indexCurrentPage--;
                 CurrentPageViewModel = ListPagesViewModel[indexCurrentPage];
+                CanGoToNextPage = indexCurrentPage < ListPagesViewModel.Count() - 1;
+                CanGoToPreviousPage = indexCurrentPage > 0;
+        
             }
         }
     }
