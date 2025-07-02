@@ -30,7 +30,8 @@
                 Margin="0,64,0,0"
                 Background="#51D169"
                 Content="{StaticResource Close}"
-                Style="{StaticResource RedButtonStyle}" />
+                Style="{StaticResource RedButtonStyle}"
+                Command="{Binding closePopupCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvvmNavigationLib.Services;
 using MvvmNavigationLib.Stores;
+using test2.Helpers;
 using test2.Models;
 using test2.ViewModels;
 using test2.ViewModels.Pages;
@@ -25,7 +26,7 @@ namespace test2.HostBuilders
                     s.GetRequiredService<NavigationStore>(),
                     s.GetRequiredService<NavigationService<MainPageViewModel>>(),
                     s.GetRequiredService<CloseNavigationService<ModalNavigationStore>>()));
-
+                services.AddSingleton<ApiLoggingHttpMessageHandler>();
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddSingleton(s => new Views.Windows.MainWindow()
                 {

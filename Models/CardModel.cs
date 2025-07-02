@@ -21,6 +21,7 @@ namespace test2.Models
         public string ImageSource {  get; set; }
 
         public bool ItsRed { get; set; }
+        public string LocalImagePath { get; set; }
 
     }
 }

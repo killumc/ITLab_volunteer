@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Refit;
 using test2.ApiManager;
+using test2.Helpers;
 
 namespace test2.HostBuilders
 {

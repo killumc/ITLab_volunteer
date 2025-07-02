@@ -19,6 +19,7 @@ namespace test2.HostBuilders
             builder.ConfigureServices((context, services) =>
             {
                 services.AddSingleton<SaveDataService>();
+                services.AddSingleton<PaymentSimulator>();
                 services.AddSingleton<About1PageViewModel>();
                 services.AddSingleton<About2PageViewModel>();
                 services.AddSingleton<About3PageViewModel>();
@@ -30,6 +31,7 @@ namespace test2.HostBuilders
                 services.AddSingleton<MainPaymentPopupViewModel>();
                 services.AddSingleton<QRPaymentPopupViewModel>();
                 services.AddSingleton<CardPaymentPopupViewModel>();
+                services.AddSingleton<SuccessPopupViewModel>();
 
             });
 

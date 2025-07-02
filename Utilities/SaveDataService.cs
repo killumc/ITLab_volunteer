@@ -8,7 +8,7 @@ using test2.Models;
 
 namespace test2.Utilities
 {
-    public class SaveDataService
+    public partial class SaveDataService: ObservableObject
     {
         public enum PopupType
         {
@@ -41,15 +41,14 @@ namespace test2.Utilities
         }
 
 
-
         private readonly TaskCompletionSource _dataLoaded = new();
-        public List<CardModel> AllProject { get; set; } = new();
+        [ObservableProperty] private List<CardModel> _allProject = new();
 
         // Это Task, который можно await-ить, чтобы дождаться загрузки данных
         public Task DataLoaded => _dataLoaded.Task;
 
         // Метод для установки данных и сигнала о готовности
-        public void SetProjects(IEnumerable<CardModel> projects)
+        public void SetProjects(List<CardModel> projects)
         {
             AllProject.Clear();
             AllProject.AddRange(projects);

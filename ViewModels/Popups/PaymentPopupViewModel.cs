@@ -18,7 +18,8 @@ namespace test2.ViewModels.Popups
         CardPaymentPopupViewModel cardPayment,
         QRPaymentPopupViewModel qrPayment,
         LoadingPopupViewModel load,
-        ErrorPopupViewModel error
+        ErrorPopupViewModel error,
+        SuccessPopupViewModel success
        ): BasePopupViewModel(closeNavigation)
     {
         
@@ -53,6 +54,9 @@ namespace test2.ViewModels.Popups
                     break;
                 case SaveDataService.PopupType.exit:
                     closeNavigation.Navigate();
+                    break;
+                case SaveDataService.PopupType.success:
+                    CurrentPopupViewModel = success;
                     break;
             }
         }
